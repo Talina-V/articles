@@ -1,8 +1,8 @@
-import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Article} from "../../../../shared/models/article.model";
 import {ArticleService} from "../../../../core/services/article.service";
 import {FormControl} from "@angular/forms";
-import {BehaviorSubject, debounceTime, distinctUntilChanged, fromEvent, map, startWith, switchMap} from "rxjs";
+import {BehaviorSubject, debounceTime, distinctUntilChanged, switchMap} from "rxjs";
 
 @Component({
     selector: 'app-articles-list',
@@ -15,10 +15,7 @@ export class ArticlesListComponent implements OnInit {
     filter: FormControl = new FormControl<string>('');
     foundArticlesCount = 0;
     searchQuery: string = '';
-    searchQuery$$ = new BehaviorSubject<string>('');
-    search() {
-        this.searchQuery$$.next(this.searchQuery);
-    }
+    searchQuery$ = new BehaviorSubject<string>('');
 
     constructor(private articleService: ArticleService) {
     }
@@ -40,4 +37,9 @@ export class ArticlesListComponent implements OnInit {
                 this.foundArticlesCount = articles.length;
             })
     }
+
+    search() {
+        this.searchQuery$.next(this.searchQuery);
+    }
+
 }

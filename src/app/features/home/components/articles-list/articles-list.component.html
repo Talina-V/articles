@@ -31,6 +31,7 @@
             class="articles-list__items"
             *ngFor="let article of articles"
             [article]="article"
+            [searchQuery]="searchQuery"
         ></app-article-card>
     </div>
 

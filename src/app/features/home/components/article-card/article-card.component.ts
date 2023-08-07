@@ -9,6 +9,8 @@ import {Article} from "../../../../shared/models/article.model";
 export class ArticleCardComponent implements OnInit {
     @Input() article!: Article;
     @Input() searchQuery!: string;
-    ngOnInit() {}
+
+    ngOnInit() {
+    }
 
 }
