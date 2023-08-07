@@ -22,5 +22,4 @@ export class ArticleService {
         return this.articleApiService.getArticleByName(title);
     }
 
-
 }

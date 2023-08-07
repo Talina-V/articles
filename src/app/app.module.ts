@@ -20,7 +20,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {HttpClientModule} from "@angular/common/http";
 import {CoreModule} from "./core/core.module";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
 import {DateFormatPipe} from './shared/pipes/date-format.pipe';
 import {TruncateTextPipe} from './shared/pipes/truncate-text.pipe';
@@ -54,6 +54,7 @@ import {SharedModule} from "./shared/shared.module";
         FormsModule,
         CommonModule,
         SharedModule,
+        ReactiveFormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

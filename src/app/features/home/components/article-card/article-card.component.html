@@ -9,7 +9,9 @@
         </div>
         <mat-card-header>
             <mat-card-title>
-                <p class="example-card__title">{{ article.title | truncateText }}</p>
+                <p class="example-card__title" [innerHtml]="article.title | highlightKeyword: searchQuery | truncateText">
+<!--                    {{ article.title | truncateText }}-->
+                </p>
             </mat-card-title>
         </mat-card-header>
         <mat-card-content>

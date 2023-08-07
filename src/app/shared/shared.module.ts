@@ -9,6 +9,7 @@ import {HighlightKeywordPipe} from "./pipes/highlight-keyword.pipe";
         HighlightKeywordPipe
     ],
     exports: [
+        HighlightKeywordPipe
     ],
     imports: [
         CommonModule

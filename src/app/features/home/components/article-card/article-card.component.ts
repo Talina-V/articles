@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ArticleService} from "../../../../core/services/article.service";
 import {Article} from "../../../../shared/models/article.model";
 
 @Component({
@@ -8,11 +7,8 @@ import {Article} from "../../../../shared/models/article.model";
     styleUrls: ['./article-card.component.scss']
 })
 export class ArticleCardComponent implements OnInit {
-    @Input()
-    article!: Article;
-
-    ngOnInit() {
-
-    }
+    @Input() article!: Article;
+    @Input() searchQuery!: string;
+    ngOnInit() {}
 
 }

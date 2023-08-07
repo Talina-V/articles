@@ -4,6 +4,7 @@
     width: 1440px;
     margin: 0 auto;
     padding-bottom: 70px;
+
     .search {
         margin: 50px 75px 0 75px;
 
@@ -37,6 +38,7 @@
             box-shadow: 0 0 19px 0 rgba(245, 245, 245, 1);
         }
     }
+
     &__cards {
         display: flex;
         flex-wrap: wrap;
@@ -73,4 +75,8 @@
         width: calc((100% - 90px) / 3);
         margin-top: 40px;
     }
+}
+
+.highlight {
+    background-color: yellow;
 }

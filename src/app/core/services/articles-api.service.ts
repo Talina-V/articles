@@ -22,6 +22,6 @@ export class ArticlesApiService {
     }
 
     getArticleByName(title: string): Observable<Article[]> {
-        return this.httpClient.get<Article[]>(`${this.BASE_API}/v3/articles/?_limit=9&title_contains=${{title}}`);
+        return this.httpClient.get<Article[]>(`${this.BASE_API}/v3/articles/?title_contains=${title}`);
     }
 }

@@ -10,8 +10,10 @@
                     id="filter"
                     name="filter"
                     placeholder="Search"
+                    [formControl]="filter"
+                    [(ngModel)]="searchQuery"
+                    (keydown.enter)="search()"
                 >
-<!--                [formControl]="filter"-->
                 <img class="search__icon" src="./assets/image/ui/search.svg" alt="{{ title }}">
             </div>
         </form>
@@ -20,19 +22,9 @@
     <div class="articles-list__wrap-search-results">
         <p class="articles-list__search-results">
             Results:
-            <span>6</span>
+            {{ foundArticlesCount }}
         </p>
     </div>
-
-<!--    <div-->
-<!--        *ngIf="articles$ | async as articles"-->
-<!--        class="articles-list__cards">-->
-<!--        <app-article-card-->
-<!--            class="articles-list__items"-->
-<!--            *ngFor="let article of articles | filterArticles: term"-->
-<!--            [article]="article"-->
-<!--        ></app-article-card>-->
-<!--    </div>-->
 
     <div class="articles-list__cards">
         <app-article-card
