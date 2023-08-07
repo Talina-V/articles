@@ -1,8 +1,6 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Article} from "../../../../shared/models/article.model";
 import {ArticleService} from "../../../../core/services/article.service";
-import {debounceTime, distinctUntilChanged, map, Observable, switchMap} from "rxjs";
-import {FilterArticlesPipe} from "../../../../shared/pipes/filter-articles.pipe";
 import {FormControl} from "@angular/forms";
 
 @Component({
