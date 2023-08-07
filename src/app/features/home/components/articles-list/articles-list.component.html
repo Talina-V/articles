@@ -29,7 +29,7 @@
     <div class="articles-list__cards">
         <app-article-card
             class="articles-list__items"
-            *ngFor="let article of articles"
+            *ngFor="let article of articles$ | async "
             [article]="article"
             [searchQuery]="searchQuery"
         ></app-article-card>

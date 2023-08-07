@@ -8,7 +8,6 @@ import {LoaderComponent} from './shared/components/loader/loader.component';
 import {
     ArticleCardComponent,
     ArticlesListComponent,
-    SearchComponent
 } from "./features/home/components";
 import {ArticleComponent} from './features/article/article.component';
 import {FeaturesModule} from "./features/features.module";
@@ -29,7 +28,6 @@ import {SharedModule} from "./shared/shared.module";
 @NgModule({
     declarations: [
         AppComponent,
-        SearchComponent,
         ArticleCardComponent,
         ArticlesListComponent,
         PathNotFoundComponent,

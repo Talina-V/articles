@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Article} from "../../../../shared/models/article.model";
 import {ArticleService} from "../../../../core/services/article.service";
 import {FormControl} from "@angular/forms";
-import {BehaviorSubject, debounceTime, distinctUntilChanged, switchMap} from "rxjs";
+import {BehaviorSubject, debounceTime, distinctUntilChanged, Observable, of, switchMap} from "rxjs";
 
 @Component({
     selector: 'app-articles-list',
@@ -12,6 +12,8 @@ import {BehaviorSubject, debounceTime, distinctUntilChanged, switchMap} from "rx
 export class ArticlesListComponent implements OnInit {
     title = 'Filter by keywords';
     articles: Article[] = [];
+
+    articles$: Observable<Article[]> = of([]);
     filter: FormControl = new FormControl<string>('');
     foundArticlesCount = 0;
     searchQuery: string = '';
@@ -21,10 +23,10 @@ export class ArticlesListComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.articleService.getArticles().subscribe((articles: Article[]) => {
-            this.articles = articles;
+        this.articles$ = this.articleService.getArticles();
+        this.articles$.subscribe((articles: Article[]) => {
             this.foundArticlesCount = articles.length;
-        })
+        });
 
         this.filter.valueChanges
             .pipe(

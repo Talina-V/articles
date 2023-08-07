@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Article} from "../../shared/models/article.model";
 import {ArticleService} from "../../core/services/article.service";
 import {ActivatedRoute} from "@angular/router";
@@ -6,7 +6,8 @@ import {ActivatedRoute} from "@angular/router";
 @Component({
     selector: 'app-article',
     templateUrl: './article.component.html',
-    styleUrls: ['./article.component.scss']
+    styleUrls: ['./article.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ArticleComponent implements OnInit {
     article!: Article;

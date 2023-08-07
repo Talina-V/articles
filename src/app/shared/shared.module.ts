@@ -1,8 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {HighlightKeywordPipe} from "./pipes/highlight-keyword.pipe";
-
-
 
 @NgModule({
     declarations: [
@@ -15,4 +13,5 @@ import {HighlightKeywordPipe} from "./pipes/highlight-keyword.pipe";
         CommonModule
     ]
 })
-export class SharedModule { }
+export class SharedModule {
+}

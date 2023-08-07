@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {PathNotFoundComponent} from "./core/components/path-not-found/path-not-found.component";
-import {ArticleComponent} from "./features/article/article.component";
 import {ArticlesListComponent} from "./features/home/components";
 
 const routes: Routes = [
