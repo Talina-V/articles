@@ -1,0 +1,19 @@
+<div class="article">
+    <div class="article__container">
+        <img class="img" mat-card-image [src]="article.imageUrl" alt="{{ article.title }}">
+    </div>
+    <mat-card>
+        <mat-card-content>
+            <p class="article__title">{{ article.title }}</p>
+        </mat-card-content>
+        <mat-card-content>
+            <p class="article__content">{{ article.summary }}</p>
+        </mat-card-content>
+    </mat-card>
+    <div class="article__btn">
+        <a mat-button routerLink="/home" class="button" href="">
+            <img class="image" src="./assets/image/ui/arrow-right.svg" alt="Back to homepage">
+            Back to homepage</a>
+    </div>
+</div>
+

@@ -1,0 +1,26 @@
+<div class="example-card">
+    <mat-card class="example-card__container">
+        <img class="img" mat-card-image src="{{ article.imageUrl }}"
+             alt="{{ article.title }}">
+
+        <div class="example-card__data">
+            <img class="example-card__data-icon" src="./assets/image/ui/akar-icons_calendar.svg" alt="icon calendar">
+            <span class="example-card__date-text">{{ article.publishedAt | dateFormat }}</span>
+        </div>
+        <mat-card-header>
+            <mat-card-title>
+                <p class="example-card__title">{{ article.title | truncateText }}</p>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p class="example-card__content">
+                {{ article.summary | truncateText }}
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <a mat-button [routerLink]="['/article', article.id ]" class="example-card__button">Read More
+                <img class="example-card__icon-arrow" src="./assets/image/ui/arrow-right.svg" alt="Arrow right">
+            </a>
+        </mat-card-actions>
+    </mat-card>
+</div>
