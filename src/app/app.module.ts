@@ -24,7 +24,6 @@ import {FormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
 import {DateFormatPipe} from './shared/pipes/date-format.pipe';
 import {TruncateTextPipe} from './shared/pipes/truncate-text.pipe';
-import {HighlightKeywordPipe} from './shared/pipes/highlight-keyword.pipe';
 import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
@@ -38,7 +37,6 @@ import {SharedModule} from "./shared/shared.module";
         ArticleComponent,
         DateFormatPipe,
         TruncateTextPipe,
-        HighlightKeywordPipe,
     ],
     imports: [
         BrowserModule,

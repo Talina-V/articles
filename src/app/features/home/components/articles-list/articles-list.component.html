@@ -1,5 +1,21 @@
 <section class="articles-list">
-    <app-search></app-search>
+    <div class="search">
+        <form class="search__container">
+            <div class="search__wrap-input">
+                <label class="search__title" for="filter">{{ title }}</label>
+                <input
+                    matInput
+                    type="text"
+                    class="search__input"
+                    id="filter"
+                    name="filter"
+                    placeholder="Search"
+                >
+<!--                [formControl]="filter"-->
+                <img class="search__icon" src="./assets/image/ui/search.svg" alt="{{ title }}">
+            </div>
+        </form>
+    </div>
 
     <div class="articles-list__wrap-search-results">
         <p class="articles-list__search-results">
@@ -8,10 +24,20 @@
         </p>
     </div>
 
+<!--    <div-->
+<!--        *ngIf="articles$ | async as articles"-->
+<!--        class="articles-list__cards">-->
+<!--        <app-article-card-->
+<!--            class="articles-list__items"-->
+<!--            *ngFor="let article of articles | filterArticles: term"-->
+<!--            [article]="article"-->
+<!--        ></app-article-card>-->
+<!--    </div>-->
+
     <div class="articles-list__cards">
         <app-article-card
             class="articles-list__items"
-            *ngFor="let article of articles$ | async"
+            *ngFor="let article of articles"
             [article]="article"
         ></app-article-card>
     </div>

@@ -18,4 +18,9 @@ export class ArticleService {
         return this.articleApiService.getArticleById(id);
     }
 
+    getArticleByName(title: string): Observable<Article[]> {
+        return this.articleApiService.getArticleByName(title);
+    }
+
+
 }

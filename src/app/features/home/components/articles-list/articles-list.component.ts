@@ -1,7 +1,9 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Article} from "../../../../shared/models/article.model";
 import {ArticleService} from "../../../../core/services/article.service";
-import {Observable} from "rxjs";
+import {debounceTime, distinctUntilChanged, map, Observable, switchMap} from "rxjs";
+import {FilterArticlesPipe} from "../../../../shared/pipes/filter-articles.pipe";
+import {FormControl} from "@angular/forms";
 
 @Component({
     selector: 'app-articles-list',
@@ -10,17 +12,30 @@ import {Observable} from "rxjs";
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ArticlesListComponent implements OnInit {
-
-    articles$!: Observable<Article[]>;
-
+    term: string = '';
+    title = 'Filter by keywords';
+    // articles$!: Article[];
+    articles: Article[] = []
+    filter: FormControl = new FormControl<string>('');
     constructor(private articleService: ArticleService) {
     }
 
     ngOnInit() {
-        this.articles$ = this.articleService.getArticles();
+        // this.articles = this.articleService.getArticles();
+        this.articleService.getArticles().subscribe((articles: Article[]) => {
+            this.articles = articles;
+        })
 
-        this.articles$.subscribe((data: Article[]) => {
-            console.log('API Response:', data);
-        });
+        // this.filter.valueChanges
+        //     .pipe(
+        //         distinctUntilChanged(),
+        //         debounceTime(500),
+        //         switchMap((value) => this.articleService.getArticleByName(value))
+        //     )
+        //     .subscribe((articles) => {
+        //         this.articles = articles;
+        //     })
+
     }
+
 }

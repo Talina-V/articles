@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
     selector: 'app-search',
@@ -7,6 +7,11 @@ import {Component} from '@angular/core';
 })
 export class SearchComponent {
     title = 'Filter by keywords';
-    constructor() {}
+    // term = '';
+     // Добавим событие termChange для передачи значения term
+
+    // onTermChange() {
+    //     this.termChange.emit(this.term);
+    // }
 
 }

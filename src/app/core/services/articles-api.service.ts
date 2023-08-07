@@ -14,10 +14,14 @@ export class ArticlesApiService {
     private BASE_API = "https://api.spaceflightnewsapi.net"
 
     getArticles(): Observable<Article[]> {
-        return this.httpClient.get<Article[]>(`${this.BASE_API}/v3/articles/`);
+        return this.httpClient.get<Article[]>(`${this.BASE_API}/v3/articles/?_limit=9`);
     }
 
     getArticleById(id: string | number): Observable<Article> {
         return this.httpClient.get<Article>(`${this.BASE_API}/v3/articles/${id}`);
+    }
+
+    getArticleByName(title: string): Observable<Article[]> {
+        return this.httpClient.get<Article[]>(`${this.BASE_API}/v3/articles/?_limit=9&title_contains=${{title}}`);
     }
 }
