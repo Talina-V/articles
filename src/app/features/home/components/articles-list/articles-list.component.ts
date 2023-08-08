@@ -12,7 +12,6 @@ import {BehaviorSubject, debounceTime, distinctUntilChanged, Observable, of, swi
 export class ArticlesListComponent implements OnInit {
     title = 'Filter by keywords';
     articles: Article[] = [];
-
     articles$: Observable<Article[]> = of([]);
     filter: FormControl = new FormControl<string>('');
     foundArticlesCount = 0;
@@ -35,7 +34,7 @@ export class ArticlesListComponent implements OnInit {
                 switchMap((value) => this.articleService.getArticleByName(value))
             )
             .subscribe((articles) => {
-                this.articles = articles;
+                this.articles$ = of(articles);
                 this.foundArticlesCount = articles.length;
             })
     }
